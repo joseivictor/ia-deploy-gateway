@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Financeiro</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body{
+      margin:0;
+      background:#0f172a;
+      color:white;
+      font-family:Arial;
+      padding:30px;
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-bottom:40px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:20px;
+      border-radius:20px;
+    }
+
+    .value{
+      font-size:32px;
+      font-weight:bold;
+      margin-top:10px;
+    }
+
+    canvas{
+      background:#1e293b;
+      border-radius:20px;
+      padding:20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>💰 Dashboard Financeiro IA</h1>
+
+<div class="cards">
+
+  <div class="card">
+    Receita
+    <div class="value">R$ 12.500</div>
+  </div>
+
+  <div class="card">
+    Gastos
+    <div class="value">R$ 4.200</div>
+  </div>
+
+  <div class="card">
+    Lucro
+    <div class="value">R$ 8.300</div>
+  </div>
+
+</div>
+
+<canvas id="grafico"></canvas>
+
+<script>
+
+const ctx = document.getElementById('grafico');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai'],
+        datasets: [{
+            label: 'Receita',
+            data: [3000, 5000, 4000, 7000, 12500]
+        }]
+    }
+});
+
+</script>
+
+</body>
+</html>
